@@ -1,0 +1,143 @@
+baseURL: https://yamlinson.com/
+languageCode: en-us
+title: Yamlinson
+theme: "hugo-profile"
+
+pagination:
+  pagerSize: 3
+
+Menus:
+  main:
+    - identifier: posts
+      name: Posts
+      title: Posts
+      url: /Posts
+      weight: 1
+
+params:
+  title: "Yamlinson"
+  description: "Ryan's Tech Portfolio and Blog"
+  favicon: "/favicon.ico"
+
+  animate: true
+
+  theme:
+    defaultTheme: "dark"
+
+  color:
+    textLinkColor: "#0083b0"
+    primaryColor: "#2d2a32"
+    darkMode:
+      textLinkColor: "#799c7d"
+      primaryColor: "#799c7d"
+
+  navbar:
+    stickyNavBar:
+      enable: true
+      showOnScrollUp: true
+
+  hero:
+    enable: true
+    intro: "Hello! My name is"
+    title: "Ryan"
+    subtitle: "This is my tech portfolio"
+    content: >
+      I'm a systems engineer skilled in Linux servers, AWS, networking, and software development.
+      I consider security in everything I do
+      and I believe a task isn't truly complete until it is automated.
+    image: "https://images.yamlinson.com/ScoutSide.jpg"
+    roundImage: true
+
+  about:
+    enable: true
+    title: "About Me"
+    image: "https://images.yamlinson.com/BWCam.jpg"
+    content: |
+      I'm passionate about IT systems, software, and the intersection of the two.
+
+      I have over 5 years of professional experience in IT operations including security analysis,
+      software development, software deployment, systems engineering, and systems administration.
+
+      I hold a Bachelor of Science in Software Engineering, which I earned after originally completing
+      a Bachelor of Music in Music Performance.
+
+      I also have 15+ years of amateur experience writing software, hosting game servers, tinkering with Linux,
+      and much more! These are the subjects of this site.
+
+      I'm also a classically trained saxophonist and amateur photographer and would love to chat about those things!
+    skills:
+      enable: true
+      title: "I often work with..."
+      items:
+        - "Ansible"
+        - "GNU/Linux"
+        - "AWS"
+        - "Docker"
+        - "Python"
+        - "JavaScript"
+        - "Terraform/OpenTofu"
+        - "CI/CD"
+
+  projects:
+    enable: true
+    items:
+      - title: "Automating Arch Linux with Ansible"
+        content: "Ansible playbooks to take a machine from a fresh Arch installation to a fully usable workstation"
+        image: "https://images.yamlinson.com/arch-btw.png"
+        featured:
+          name: "Writeup"
+          link: "/posts/automating-arch"
+        badges:
+          - "Ansible"
+          - "Linux"
+        links:
+          - icon: "fab fa-github"
+            url: "https://github.com/yamlinson/arch-btw"
+
+      - title: "World Info"
+        content: "Select countries from a world map to fetch information from the World Bank API"
+        image: "https://images.yamlinson.com/worldInfo.png"
+        featured:
+          name: "Demo"
+          link: "https://worldinfo.yamlinson.com"
+        badges:
+          - "Vue"
+          - "AWS CloudFront"
+          - "CI/CD"
+          - "API consumption"
+        links:
+          - icon: "fab fa-github"
+            url: "https://github.com/yamlinson/worldInfo"
+
+      - title: "Oats"
+        content: "A CLI to-do tracker which helps you focus on one item at a time"
+        image: "https://images.yamlinson.com/oats.png"
+        badges:
+          - "Go"
+          - "SQLite"
+        links:
+          - icon: "fab fa-github"
+            url: "https://github.com/yamlinson/oats"
+
+      - title: "This portfolio page"
+        content: "That's right. I make the rules here, and I'm including it."
+        image: "https://images.yamlinson.com/portfolio.png"
+        badges:
+          - "Hugo"
+          - "AWS CloudFront"
+          - "CI/CD"
+        links:
+          - icon: "fab fa-github"
+            url: "https://github.com/yamlinson/tech-portfolio"
+
+  footer:
+    recentPosts:
+      path: "posts"
+      count: 3
+      title: "Recent Posts"
+      enable: true
+    socialNetworks:
+      github: "https://github.com/yamlinson"
+
+  singlePages:
+    socialShare: false
