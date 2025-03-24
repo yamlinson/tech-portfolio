@@ -2,11 +2,11 @@ version: 0.2
 phases:
   install:
     commands:
-      - apt-get update -y
+      - apt-get update
       - apt-get install -y hugo
   build:
     commands:
-      - hugo
+      - hugo --config hugo.yaml
   post_build:
     commands:
       - aws s3 cp ./public $(echo $S3_BUCKET) --recursive
