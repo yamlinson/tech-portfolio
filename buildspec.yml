@@ -4,6 +4,7 @@ phases:
     commands:
       - apt-get update
       - apt-get install -y hugo
+      - git clone https://github.com/gurusabarish/hugo-profile.git themes/hugo-profile
   build:
     commands:
       - hugo --config hugo.yaml
