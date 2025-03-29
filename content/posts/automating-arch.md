@@ -4,56 +4,49 @@ draft: false
 title: "Automating Arch Linux with Ansible"
 ---
 
-## Introduction
-
 > _Why, yes; I do use Arch._
 
 This is a quick writeup for [arch-btw](https://github.com/yamlinson/arch-btw),
 an Ansible project I use to manage the configuration of my Arch Linux workstations.
 
-### The Problem
+## Introduction
 
-The GNU/Linux pair make for a great operating system, but full-featured Linux distributions will, by design,
-**always** include things you don't need or want.
-Most systems can handle some unnecessary bloat, and many users are happy to accept that bloat for the convenience of
-an easy OS with all the bells and whistles, but, after enough time, good-enough might not be good enough anymore.
+A while back, I decided to take the plunge and install Arch Linux on my main PC.
+After leaving Windows for GNU/Linux a couple years ago, I bounced around between a few different Linux distros.
+Ultimately, my decision to move to Arch came down to two main reasons:
 
-Distributions like Arch Linux take a different approach, focusing heavily on minimalism.
-Starting from next to nothing gives you the opportunity to include exactly what you want and nothing you don't.
-For someone new to the Linux world, building up a functional (and useful) operating system from this level
-can be extremely intimidating, if not entirely prohibitive.
-For a reasonably-seasoned Linux admin, the ability to configure from scratch is attractive,
-but still must be weighed against the administrative burden.
+- Frustration with the bloat included in most distros
+- Wanting to learn Linux a little closer to the metal
 
-### The Solution
+I don't mean for this to be a jab at any specific distribution, so I'm not going to mention any.
+I don't think any major distribution is "bad" at all.
+In fact, I'm pretty amazed at how many features their developers are able to pack into them.
+I just reached a point where I wanted more control over my operating system
+and the experience of customizing it to be exactly what I want (and nothing more.)
 
-Automate it with Ansible!
+Another major factor was the Ansible skills I had been developing over the last few years.
+I had largely stayed away from any major customizations to my environment up to this point
+because I was bad at documenting them and hadn't put the effort into automating them.
+Without either of those things in place,
+the idea of transferring significant customizations to a new machine or replicating to my other machines
+sounded like a nightmare.
+With some decent Ansible chops built up, I felt more confident in my ability to maintain this project long-term.
 
-Arch Linux managed by Ansible gives you the complete control over your operating system you want,
-while greatly reducing the effort required to maintain it.
+As a side note, I think a lot of people recognize Ansible's value in managing fleets of servers,
+but I think it is unfortunately overlooked as a tool for managing smaller environments,
+or even single machines.
+I think it has a lot of value as a solution to both of the hurdles I mentioned above.
+It obviously addresses the automation, but is also pretty effective at self-documenting.
+An Ansible playbook doesn't read quite as well as plain English,
+but with a little time to familiarize with a project's structure, it shouldn't be too hard to follow.
 
-In my experience, Ansible is seriously underrated as a tool for configuring a single machine.
-Everyone knows it's invaluable when you need a fleet of hundreds or thousands of servers configured exactly alike,
-but I'd like to make a case for its value at a smaller scale.
+## Inspiration
 
-### Inspiration
-
-This project was heavily inspired by Jeff Geerling's
+This project was heavily inspired by [Jeff Geerling](https://www.jeffgeerling.com/)'s
 [Mac Development Playbook](https://github.com/geerlingguy/mac-dev-playbook).
+In the future, I plan to start another playbook to manage my MacBooks.
 
-If you work with Ansible and don't already know of [Jeff Geerling](https://www.jeffgeerling.com/),
-you should check him out! He's wicked smart and has made a ton of contributions to the Ansible community.
-
-### Before We Start
-
-This project does not make any use of advanced Ansible concepts, but you should have a basic understanding of
-Ansible if you want to follow along.
-
-Jay at [Learn Linux TV](https://www.youtube.com/channel/UCxQKHvKbmSzGMvUrVtJYnUA) has a great
-[introductory playlist](https://youtube.com/playlist?list=PLT98CRl2KxKEUHie1m24-wkyHpEsa4Y70)
-on YouTube to get you started.
-
-## Intermediary Musings
+## Digging In
 
 This project isn't really intended to be a portable solution for anyone but me,
 so I want to talk more about how it came to be and why I did what I did,
@@ -93,10 +86,6 @@ shows the organic growth of the project as I slowly pieced together my perfect s
 Over time, I started from a very simple configuration and slowly added in pieces as I found them.
 My needs in a workstation honestly aren't very extreme, and I would still consider this a pretty simple project,
 but it has grown with me as I have formed stronger opinions about how a Linux machine should run.
-
-## Digging In
-
-Okay, too much rambling. These are some decisions I made and why I made them:
 
 ### Inventory Files as Keys
 
@@ -140,18 +129,18 @@ I finally bought a Radeon GPU last year for better compatibility with Wayland),
 Bluetooth, rebinding caps lock, etc.
 Whether these roles are run on a machine is controlled by a boolean flag in the 'hosts.yml' file.
 
-## Where to Go from Here
+## Closing Thoughts
 
 I hope this inspired you to rethink how you manage your own machines.
 If you haven't already, I really think you should start a similar project.
 It can be for whatever applies to you.
-Maybe you want to stick with Fedora, but don't want to reset display preferences in a KDE GUI
+Maybe you want to keep using Fedora, but don't want to reset display preferences in a KDE GUI
 any time you set up a new computer.
 Maybe you've always wanted to change some hotkeys, but didn't want to have to think about maintaining them.
-At some point, I would personally like to start another similar project for use in managing my MacBooks.
+Start small! The project will grow with you.
 
 I also hope this might change some perception around Ansible and open more people up to using it
 at a smaller scale.
 I have also worked in the middle ground on this, using principles similar to the ones in this project to manage single
 or low double digits of hosts; small enough environments where everything **could** be maintained manually,
-but where a little upfront work writing Ansible playbooks has paid huge dividends in time saved down the road.
+but where a little time investment writing Ansible playbooks has paid huge dividends in time saved down the road.
